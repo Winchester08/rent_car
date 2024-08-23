@@ -14,7 +14,7 @@
 		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
         
         <!-- title of site -->
-        <title>{{head}}</title>
+        <title>{{ventana.alerta}}</title>
 
         <!-- For favicon png -->
 		<link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename= 'imgs/logo/favicon.ico')}}"/>
@@ -78,7 +78,7 @@
 				                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 				                    <i class="fa fa-bars"></i>
 				                </button>
-				                <a class="navbar-brand" href="#">{{head}}<span></span></a>
+				                <a class="navbar-brand" href="#">{{ventana.alerta}}<span></span></a>
 
 				            </div><!--/.navbar-header-->
 				            <!-- End Header Navigation -->
@@ -86,7 +86,7 @@
 				            <!-- Collect the nav links, forms, and other content for toggling -->
 				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
 				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-				                    <li class=" scroll active"><a href="#home">Inicio</a></li>
+				                    <li class=" scroll active"><a href="#home">{{ventana.usuario}}</a></li>
 				                    <li class="scroll"><a href="#service">Renta</a></li>
 				                    <li class="scroll"><a href="#featured-cars">Listado</a></li>
 				                    <li class="scroll"><a href="#brand">Usuarios</a></li>
@@ -104,7 +104,7 @@
 
 			<div class="container">
 				<div class="welcome-hero-txt">
-					<h2>Los mejores y más exclusivos autos que tenemos en nuestro catalogo</h2>
+					<h2>{{ventana.sistema}}</h2>
 					
 					<button class="welcome-btn">Contactanos</button>
 				</div>
