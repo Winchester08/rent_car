@@ -5,8 +5,8 @@ app = Flask(__name__)
 @app.route('/inicio')
 def arranca():
     titulo = "Catalogo de Autos Disponibles"
-    cabecera = "Rent | Car"
-    return render_template('autos/index.html', letrero=titulo, head=cabecera)
+    
+    return render_template('autos/index.html', letrero=titulo,)
     #return "Primer Flask Fallaste chiquitin"
 
 @app.route('/renta')

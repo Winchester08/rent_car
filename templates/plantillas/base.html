@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent </title>
+
+        <!-- For favicon png -->
+		<link rel="shortcut icon" type="image/icon" href="{{ url_for('static', filename= 'imgs/logo/favicon.ico')}}"/>
+       
+        <!--font-awesome.min.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+
+        <!--linear icon css-->
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/linearicons.css') }}">
+
+        <!--flaticon.css-->
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/flaticon.css') }}">
+
+		<!--animate.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/animate.css') }}">
+
+        <!--owl.carousel.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/owl.carousel.min.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/owl.theme.default.min.css') }}">
+		
+        <!--bootstrap.min.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+		
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootsnav.css') }}" >	
+        
+        <!--style.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+        
+        <!--responsive.css-->
+        <link rel="stylesheet" href="{{ url_for('static', filename= 'css/responsive.css') }}">
+</head>
+
+<body>
+    {% block contenido %}
+    {% endblock %}
+</body>
+</html>
+<script src="{{ url_for('static', filename= 'js/jquery.js')}}"></script>
+    
+        <script src="{{ url_for('static', filename= 'js/bootstrap.min.js')}}"></script>
+		
+		<!-- bootsnav js -->
+		<script src="{{ url_for('static', filename= 'js/bootsnav.js')}}"></script>
+
+		<!--owl.carousel.js-->
+        <script src="{{ url_for('static', filename= 'js/owl.carousel.min.js')}}"></script>		
+
+        <!--Custom JS-->
+        <script src="{{ url_for('static', filename= 'js/custom.js')}}"></script>
