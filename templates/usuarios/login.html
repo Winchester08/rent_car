@@ -11,131 +11,35 @@
 {% block contenido %}
 
 <body>
-	<!--[if lte IE 9]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-        <![endif]-->
-
-	<!--welcome-hero start -->
-	<section id="home" class="welcome-hero">
-
-		<!-- top-area Start -->
-		<div class="top-area">
-			<div class="header-area">
-				<!-- Start Navigation -->
-				<nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
-
-					<div class="container">
-
-						<!-- Start Header Navigation -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-								<i class="fa fa-bars"></i>
-							</button>
-							<a class="navbar-brand" href="#">{{head}}<span></span></a>
-
-						</div><!--/.navbar-header-->
-						<!-- End Header Navigation -->
-
-						<!-- Collect the nav links, forms, and other content for toggling -->
-						<div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-							<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-								<li class=" scroll active"><a href="#home">Inicio</a></li>
-								<li class="scroll"><a href="#new-cars">Renta</a></li>
-								<li class="scroll"><a href="#featured-cars">Listado</a></li>
-								<li class="scroll"><a href="#brand">Usuarios</a></li>
-								<li class="scroll"><a href="#contact">Reportes</a></li>
-							</ul><!--/.nav -->
-						</div><!-- /.navbar-collapse -->
-					</div><!--/.container-->
-				</nav><!--/nav-->
-				<!-- End Navigation -->
-			</div><!--/.header-area-->
-			<div class="clearfix"></div>
-
-		</div><!-- /.top-area-->
-		<!-- top-area End -->
-
+	
+	<section id="new-cars" class="new-cars">
 		<div class="container">
-			<div class="welcome-hero-txt">
-				<h2>Los mejores y más exclusivos autos que tenemos en nuestro catalogo</h2>
-				
-				<button class="welcome-btn">Contactanos</button>
-			</div>
-		</div>
-
-	</section><!--/.welcome-hero-->
-	<section id="featured-cars" class="featured-cars">
-		<div class="container">
-			<div class="model-search-content">
-				<div class="row">
-					<div class="col-md-offset-1 col-md-2 ">
-						
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer id="contact" class="contact">
-		<div class="container">
-			<div class="footer-top">
-				<div class="row">
-					<div class="col-md-3 col-sm-6">
-						<div class="single-footer-widget">
-
-
+			<div class="section-header">
+				<h2>Renta de Vehiculos</h2>
+				<p>Llena el Formulario</p>
+			</div><!--/.section-header-->
+			<div class="new-cars-content">
+					<div class="row">
+						<div class="col-md-12">
+										<form action="">
+											<fieldset>
+												<legend>Login de Usuarios</legend>
+												<p>Usuario:</p> <input type="text" name="usuario" class="form-control">
+												<hr>
+												<p>Clave: <input type="password" name="clave" class="form-control"></p>
+												
+											</fieldset>
+											<button type="submit" class="btn btn-danger">Entrar Sistema</button>
+										</form>
 						</div>
 					</div>
-
-
-
-				</div>
-			</div>
-			<div class="footer-copyright">
-				<div class="row">
-					<div class="col-sm-6">
-						<p>
-							&copy; Sitio acondicionado para Asesorias por | RW.
-						</p><!--/p-->
-					</div>
-
-				</div>
-			</div><!--/.footer-copyright-->
+				
+			</div><!--/.new-cars-content-->
 		</div><!--/.container-->
 
-		<div id="scroll-Top">
-			<div class="return-to-top">
-				<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title=""
-					data-original-title="Back to Top" aria-hidden="true"></i>
-			</div>
-
-		</div><!--/.scroll-Top-->
-
-	</footer><!--/.contact-->
-	<!--contact end-->
-
-
-
-	<!-- Include all js compiled plugins (below), or include individual files as needed -->
-
-	<script src="assets/js/jquery.js"></script>
-
-	<!--modernizr.min.js-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-	<!--bootstrap.min.js-->
-	<script src="assets/js/bootstrap.min.js"></script>
-
-	<!-- bootsnav js -->
-	<script src="assets/js/bootsnav.js"></script>
-
-	<!--owl.carousel.js-->
-	<script src="assets/js/owl.carousel.min.js"></script>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-	<!--Custom JS-->
-	<script src="assets/js/custom.js"></script>
-
+	</section><!--/.new-cars-->
+	
+	{% include '/plantillas/footer.html' %}
 </body>
 
 </html>

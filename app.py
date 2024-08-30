@@ -1,6 +1,14 @@
 from flask import Flask, render_template
+from flask_mysqldb import MySQL, MySQLdb
 
 app = Flask(__name__)
+
+app.config['MYSQL_HOST']='localhost'
+app.config['MYSQL_USER']='rigo_dev'
+app.config['MYSQL_PASSWORD']='123456Ab'
+app.config['MYSQL_DB']='renta_autos'
+
+base_datos = MySQL(app)
 
 @app.route('/inicio')
 def arranca():
@@ -23,11 +31,12 @@ def renta_autos():
 def listados_autos():
     mensajes = {
     'alerta': 'Ventana de Listado',
-    'usuario':  'Visitante',
     'sistema':  'Sistema de renta de vehiculos',
     }
-   
-    return render_template ('autos/listado_autos.html', ventana=mensajes)
+    lista = base_datos.connection.cursor()
+    lista.execute("Select * from autos ")
+    muestra = lista.fetchall()
+    return render_template ('autos/listado_autos.html', ventana=mensajes, muestra=muestra)
 
 @app.route('/captura')
 def captura_usuarios():
