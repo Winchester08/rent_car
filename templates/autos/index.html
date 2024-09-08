@@ -275,15 +275,20 @@
 				<div class="new-cars-content">
 						<div class="row">
 							<div class="col-md-12">
-											<form action="">
+											<form action="/guarda_renta" method="post">
 												<fieldset>
 													<legend>Renta de Vehículo</legend>
-													<p>Folio:</p> <input type="text" name="folio" class="form-control">
+													<p>Folio:</p> <input type="text" name="folio" class="form-control" value="RC-885-01">
 													<hr>
 													<p>Fecha: <input type="date" name="fecha" class="form-control"></p>
-													<p>Auto: Traer los datos de los autos<input type="text" name="auto" class="form-control"></p>
-													<p>Tipo: <input type="text" name="tipo" class="form-control"></p>
-													<p>Estado: Si esta disponible <input type="text" name="estado" class="form-control"></p>
+													<p>Auto: 
+														<select  name="auto" id="" class="form-control">
+															<option value="">[Selecciona un Auto]</option>
+															{% for auto in autos %}
+															<option value="{{auto.0}}">{{auto.1}} -- {{auto.2}} </option>
+															{% endfor %}
+														</select>
+													<p>Estado: <input type="text" name="estado" class="form-control" value="Disponible"></p>
 													<p>Descripcion: </p><p><textarea name="descripcion" rows="8" cols="34" class="form-control"></textarea></p>
 													<p>Costo Renta: <input type="text" name="crenta" class="form-control"></p>
 													<p>Dias renta: <input type="text" name="dias_renta" class="form-control"></p>
@@ -293,6 +298,7 @@
 												<button type="submit" class="btn btn-success">Guardar Datos</button>
 											</form>
 							</div>
+							<p>{{mensaje}}</p>
 						</div>
 					
 				</div><!--/.new-cars-content-->

@@ -110,211 +110,39 @@
 				</div>
 			</div>
 
-		</section><!--/.welcome-hero-->
-		<!--featured-cars start -->
-		<section id="featured-cars" class="featured-cars">
+		</section>
+		
+		<section id="new-cars" class="new-cars">
 			<div class="container">
+				<p>{{msj}}</p>
 				<div class="section-header">
-					<h2>Vehiculos en Inventario</h2>
+					<h2>Captura de Usuarios</h2>
+					<p>Llena el Formulario</p>
 				</div><!--/.section-header-->
-				<div class="featured-cars-content">
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc1.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">BMW 6-series gran coupe</a></h2>
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
+				<div class="new-cars-content">
+						<div class="row">
+							<div class="col-md-12">
+											<form action="/guarda_usuario" method="post">
+												<fieldset>
+													<legend>Captura de Datos</legend>
+													<p>Nombre:</p> <input type="text" name="nombre" class="form-control">
+													<hr>
+													<p>Apellidos: <input type="text" name="ap" class="form-control"></p>
+													<hr>
+													<p>Usuario: <input type="text" name="usuario" class="form-control"></p>
+													
+													<hr>
+												</fieldset>
+												<button type="submit" class="btn btn-success">Guardar Datos Usuario</button>
+											</form>
 							</div>
 						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc2.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">chevrolet camaro <span>wmv20</span></a></h2>
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc3.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">lamborghini <span>v520</span></a></h2>
-									
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc4.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">audi <span> a3</span> sedan</a></h2>
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc4.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">infiniti <span>z5</span></a></h2>
-									
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc5.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">porsche <span>718</span> cayman</a></h2>
-									
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc7.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#"><span>bmw 8-</span>series coupe</a></h2>
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-3 col-md-4 col-sm-6">
-							<div class="single-featured-cars">
-								<div class="featured-img-box">
-									<div class="featured-cars-img">
-										<img src="{{ url_for ('static', filename='imgs/featured-cars/fc8.png')}}" alt="cars">
-									</div>
-									<div class="featured-model-info">
-										<p>
-											model: 2017
-											<span class="featured-mi-span"> 3100 mi</span> 
-											<span class="featured-hp-span"> 240HP</span>
-											 automatic
-										</p>
-									</div>
-								</div>
-								<div class="featured-cars-txt">
-									<h2><a href="#">BMW <span> x</span>series-6</a></h2>
-									
-									<p>
-										Texto de la Base de Datos 
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
+					
 				</div>
-			</div><!--/.container-->
+			</div>
 
-		</section><!--/.featured-cars-->
-		<!--featured-cars end -->
+		</section>
+		
 
 		<!-- clients-say strat -->
 		
