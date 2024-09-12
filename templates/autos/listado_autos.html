@@ -18,12 +18,14 @@
 						<div class="col-md-12">
 										<form action="">
 											<fieldset>
-												<table width="100%" border="1">
+												<table width="100%"  class="table table-hover">
+													<thead>
 													<tr>
-														<td>Marca</td>
-														<td>Transmision</td>
-														<td>Tipo</td>
+														<td scope="col">Marca</td>
+														<td scope="col">Transmision</td>
+														<td scope="col">Tipo</td>
 													</tr>
+												</thead>
 													{% for auto in muestra %}
 													<tr>
 														<td>{{auto.1}}</td>

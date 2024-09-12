@@ -2,57 +2,63 @@
 <!doctype html>
 <html class="no-js" lang="en">
 
-    <head>
-    </head>
-	{% block contenido %}
-	<body>
+<head>
+</head>
+{% block contenido %}
+
+<body>
 	{% include '/plantillas/welcome_nav.html' %}
 	<section id="new-cars" class="new-cars">
 		<div class="container">
 			<div class="section-header">
-				
+
 			</div><!--/.section-header-->
 			<div class="new-cars-content">
-					<div class="row">
-						<div class="col-md-12">
-										<form action="">
-											<fieldset>
-												<table width="100%" border="1">
-													<tr>
-														<td>Fecha de Renta</td>
-														<td>Estatus</td>
-														<td>Costo</td>
-                                                        <td>Abono</td>
-                                                        <td>Faltante</td>
-                                                        <td>Dias de Renta</td>
-                                                        <td>Folio</td>
-                                                        <td>Acciones</td>
-													</tr>
-													{% for renta in datos %}
-													<tr>
-														<td>{{renta.4}}</td>
-														<td>{{renta.11}}</td>
-														<td>{{renta.8}}</td>
-                                                        <td>{{renta.9}}</td>
-                                                        <td>{{renta.10}}</td>
-                                                        <td>{{renta.12}}</td>
-                                                        <td>{{renta.13}}</td>
-                                                        <td>Actualizar</td>
-													</tr>
-													{% endfor %}
-												</table>
-											</fieldset>
-											
-										</form>
-						</div>
+				<div class="row">
+					<div class="col-md-12">
+						<form action="">
+							<fieldset>
+								<table width="100%" class="table table-hover">
+									<tr>
+										<td><strong>Fecha de Renta</strong></td>
+										<td><strong>Estatus</strong></td>
+										<td><strong>Costo</strong></td>
+										<td><strong>Abono</strong></td>
+										<td><strong>Faltante</strong></td>
+										<td><strong>Dias de Renta</strong></td>
+										<td><strong>Folio</strong></td>
+										<td><strong>Acciones</strong></td>
+									</tr>
+									{% for renta in datos %}
+									<tr>
+										<td>{{renta.4}}</td>
+										<td>{{renta.11}}</td>
+										<td>{{renta.8}}</td>
+										<td>{{renta.9}}</td>
+										<td>{{renta.10}}</td>
+										<td>{{renta.12}}</td>
+										<td>{{renta.13}}</td>
+										<td><a href="{{url_for('modifica', id=renta.0)}}" class="btn btn-warning">
+												Actualizar </a> <b>|</b>
+											<a href="{{url_for('borrado', id=renta.0)}}" class="btn btn-danger"
+												onclick="alert('Deseas borrar el registro actual')"> Cancelar </a>
+										</td>
+									</tr>
+									{% endfor %}
+								</table>
+							</fieldset>
+
+						</form>
 					</div>
-				
+				</div>
+
 			</div>
 		</div>
 
 	</section>
 	{% include '/plantillas/footer.html' %}
-        
-    </body>
-	{% endblock %}
+
+</body>
+{% endblock %}
+
 </html>

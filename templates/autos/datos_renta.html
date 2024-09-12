@@ -1,0 +1,43 @@
+{% extends '/plantillas/base.html' %}
+{% block contenido %}
+<body>
+    
+    {% include '/plantillas/welcome_nav.html' %}
+<section id="new-cars" class="new-cars">
+    <div class="container">
+        <div class="section-header">
+        
+        </div><!--/.section-header-->
+        <div class="new-cars-content">
+                <div class="row">
+                    <div class="col-md-12">
+                                    <form action="/actualiza_datos/{{datos_renta.0}}" method="POST">
+                                        <fieldset>
+                                            <legend>{{mensaje}}</legend>
+                                            <input type="hidden" name="id" class="form-control" value="{{datos_renta.0}}">
+                                            <p>Folio:</p> <input type="text" name="folio" class="form-control" value="{{datos_renta.13}}">
+                                            <hr>
+                                            <p>Fecha: <input type="text" name="fecha" class="form-control" value="{{datos_renta.4}}"></p>
+                                            
+                                            <p>Estado: <input type="text" name="estado" class="form-control" value="{{datos_renta.11}}"></p>
+                                            <p>Descripcion: </p><p><textarea name="descripcion" rows="8" cols="34" class="form-control" >{{datos_renta.5}}</textarea></p>
+                                            <p>Costo Renta: <input type="text" name="crenta" class="form-control" value="{{datos_renta.8}}"></p>
+                                            <p>Dias renta: <input type="text" name="dias_renta" class="form-control" value="{{datos_renta.12}}"></p>
+                                            <p>Fecha Entrega: <input type="text" name="fe_entrega" class="form-control" value="{{datos_renta.6}}"></p>
+                                            <p>Abono: <input type="text" name="abono" class="form-control" value="{{datos_renta.9}}"></p>
+                                            <p>Resto: <input type="text" name="resto" class="form-control" ></p>
+                                            <p>Observaciones: </p><p><textarea name="obs" rows="8" cols="34" class="form-control" ></textarea></p>
+                                            <p>Penalizacion: </p><p><textarea name="penalizados" rows="8" cols="34" class="form-control" ></textarea></p>
+                                        </fieldset>
+                                        <button type="submit" class="btn btn-success">Actualizar Datos</button>
+                                    </form>
+                    </div>
+                    
+                </div>
+            
+        </div><!--/.new-cars-content-->
+    </div><!--/.container-->
+
+</section><!--/.new-cars-->
+{% endblock %}
+</body>

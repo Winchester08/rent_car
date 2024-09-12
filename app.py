@@ -57,7 +57,7 @@ def rentados():
     }
 
     lista = base_datos.connection.cursor()
-    lista.execute("Select * from renta")
+    lista.execute("Select * from renta where resto='Pendiente' ")
     muestra = lista.fetchall()
     return render_template('autos/rentados.html', ventana = mensajes, datos = muestra)
 
@@ -81,6 +81,48 @@ def listados_autos():
     lista.execute("Select * from autos ")
     muestra = lista.fetchall()
     return render_template ('autos/listado_autos.html', ventana=mensajes, muestra=muestra)
+
+@app.route('/borrado/<int:id>/')
+def borrado(id):
+    borra = base_datos.connection.cursor()
+    borra.execute("Delete from renta where id=%s",(id,))
+    borra.connection.commit()
+    return redirect(url_for('rentados'))
+    #return "Borrando Datos"
+    borra.close()
+
+@app.route('/modifica/<id>')
+def modifica(id):
+    mensajes = {
+    'alerta': 'Registro Encontrado',
+    'sistema':  'Sistema de renta de vehiculos',
+    }
+    titulo = "Registro  a Modificar"
+    modificar = base_datos.connection.cursor()
+    modificar.execute("Select * from renta where id=%s",(id,))
+    datos = modificar.fetchall()
+    modificar.close()
+    return render_template('autos/datos_renta.html', mensaje = titulo, datos_renta = datos[0], ventana=mensajes)
+
+@app.route('/actualiza_datos/<int:id>', methods = ['POST'])
+def actualiza_datos(id):
+    i=request.form['id']
+    fol = request.form['folio']
+    fe = request.form['fecha']
+    edo = request.form['estado']
+    costo = request.form['crenta']
+    dias = request.form['dias_renta']
+    feent = request.form['fe_entrega']
+    abono = request.form['abono']
+    resto = request.form['resto']
+    obs = request.form['obs']
+    pen = request.form['penalizados']
+
+    editar = base_datos.connection.cursor()
+    editar.execute("Update renta set observaciones=%s, resto=%s, estatus=%s, penalizaciones = %s where id=%s",(obs, resto,edo,pen,id))
+    editar.close()
+    return redirect(url_for('rentados'))
+    
 
 @app.route('/captura')
 def captura_usuarios():
