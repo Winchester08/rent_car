@@ -13,54 +13,7 @@
 		
 	
 		<!--welcome-hero start -->
-		<section id="home" class="welcome-hero">
-
-			<!-- top-area Start -->
-			<div class="top-area">
-				<div class="header-area">
-					<!-- Start Navigation -->
-				    <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
-
-				        <div class="container">
-
-				            <!-- Start Header Navigation -->
-				            <div class="navbar-header">
-				                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-				                    <i class="fa fa-bars"></i>
-				                </button>
-				                <a class="navbar-brand" href="#">{{head}}<span></span></a>
-
-				            </div><!--/.navbar-header-->
-				            <!-- End Header Navigation -->
-
-				            <!-- Collect the nav links, forms, and other content for toggling -->
-				            <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-				                <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
-				                    <li class=" scroll active"><a href="#home">Inicio</a></li>
-				                    <li class="scroll"><a href="#new-cars"></a></li>
-				                    <li class="scroll"><a href="#featured-cars">Listado</a></li>
-				                    <li class="scroll"><a href="#brand">Usuarios</a></li>
-				                    <li class="scroll"><a href="#contact">Reportes</a></li>
-				                </ul><!--/.nav -->
-				            </div><!-- /.navbar-collapse -->
-				        </div><!--/.container-->
-				    </nav><!--/nav-->
-				    <!-- End Navigation -->
-				</div><!--/.header-area-->
-			    <div class="clearfix"></div>
-
-			</div><!-- /.top-area-->
-			<!-- top-area End -->
-
-			<div class="container">
-				<div class="welcome-hero-txt">
-					<h2>Los mejores y más exclusivos autos que tenemos en nuestro catalogo</h2>
-					
-					<button class="welcome-btn">Contactanos</button>
-				</div>
-			</div>
-
-		</section><!--/.welcome-hero-->
+		{% include 'plantillas/welcome_nav.html'%}
 		<!--featured-cars start -->
 		<section id="featured-cars" class="featured-cars">
 			<div class="container">
@@ -278,6 +231,23 @@
 											<form action="/guarda_renta" method="post">
 												<fieldset>
 													<legend>Renta de Vehículo</legend>
+													<p>Usuario: 
+														<select  name="usuario" id="" class="form-control">
+															<option value="0">[Selecciona un Usuario]</option>
+															<option value="1">Usuario 1 -- Admin </option>
+															<option value="1">Usuario 2 -- Caja </option>
+															<option value="2">Usuario 3 -- Capturista </option>
+														</select>
+													</p>
+													<p>Cliente: 
+														<select  name="cliente" id="" class="form-control">
+															<option value="0">[Selecciona un Cliente]</option>
+															<option value="1">Cliente 1 -- Auto </option>
+															<option value="2">Cliente 2 -- Camioneta </option>
+															
+														</select>
+													</p>
+													Cambiar folio Dinamico
 													<p>Folio:</p> <input type="text" name="folio" class="form-control" value="RC-885-01">
 													<hr>
 													<p>Fecha: <input type="date" name="fecha" class="form-control"></p>

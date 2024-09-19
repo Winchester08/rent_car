@@ -2,7 +2,7 @@
 
 {% block contenido %}
 <section id="home" class="welcome-hero">
-
+    
     <!-- top-area Start -->
     <div class="top-area">
         <div class="header-area">
@@ -25,8 +25,8 @@
                     <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
                         <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                             <li class=" scroll active"><a href="#home">{{ventana.usuario}}</a></li>
-                            <li class="scroll"><a href="/">Renta</a></li>
-                            <li class="scroll"><a href="/listado">Listado</a></li>
+                            <li class="scroll"><a href="{{url_for('arranca')}}">Renta</a></li>
+                            <li class="scroll"><a href="{{url_for('rentados')}}">Listado</a></li>
                             <li class="scroll"><a href="/usuarios">Usuarios</a></li>
                             <li class="scroll"><a href="/reportes">Reportes</a></li>
                         </ul><!--/.nav -->

@@ -21,7 +21,7 @@
 								<table width="100%" class="table table-hover">
 									<tr>
 										<td><strong>Fecha de Renta</strong></td>
-										<td><strong>Estatus</strong></td>
+										<td><strong>Auto - Marca - Modelo</strong></td>
 										<td><strong>Costo</strong></td>
 										<td><strong>Abono</strong></td>
 										<td><strong>Faltante</strong></td>
@@ -31,18 +31,19 @@
 									</tr>
 									{% for renta in datos %}
 									<tr>
-										<td>{{renta.4}}</td>
-										<td>{{renta.11}}</td>
-										<td>{{renta.8}}</td>
-										<td>{{renta.9}}</td>
-										<td>{{renta.10}}</td>
-										<td>{{renta.12}}</td>
-										<td>{{renta.13}}</td>
-										<td><a href="{{url_for('modifica', id=renta.0)}}" class="btn btn-warning">
-												Actualizar </a> <b>|</b>
-											<a href="{{url_for('borrado', id=renta.0)}}" class="btn btn-danger"
-												onclick="alert('Deseas borrar el registro actual')"> Cancelar </a>
+										<td>{{renta[3]}}</td>
+										<td>{{renta[0]}} | {{renta[1]}} | {{renta[2]}}</td>
+										<td>{{renta[5]}}</td>
+										<td>{{renta[6]}}</td>
+										<td>{{renta[7]}}</td>
+										<td>{{renta[8]}} dias</td>
+										<td>{{renta[9]}}</td>
+										<td colspan="2">
+											<a href="{{url_for('modifica', id=renta[10])}}" class="btn btn-warning">Actualizar</a> |
+											<a href="{{url_for('borrado', id=renta[10])}}" class="btn btn-danger">Cancelar</a>
 										</td>
+										
+										
 									</tr>
 									{% endfor %}
 								</table>

@@ -14,11 +14,14 @@ base_datos = MySQL(app)
 
 @app.route('/inicio')
 def arranca():
-    titulo = "Catalogo de Autos Disponibles"
+    mensajes = {
+    'alerta': 'Bienvenido',
+    'sistema':  'Sistema de renta de vehiculos',
+    }
     lista = base_datos.connection.cursor()
     lista.execute("Select * from autos ")
     muestra = lista.fetchall()
-    return render_template('autos/index.html', letrero=titulo, autos = muestra)
+    return render_template('autos/index.html', ventana = mensajes, autos = muestra)
 
 @app.route('/guarda_renta', methods = ['POST'])
 def guarda_renta():
@@ -32,8 +35,8 @@ def guarda_renta():
         dias = request.form['dias_renta']
         fent = request.form['fe_entrega']
         ab = request.form['abono']
-        iusuario = 2
-        cliente = 2
+        iusuario = request.form['usuario']
+        cliente = request.form['cliente']
         obs = ' '
         penal = ''
         resto = 'Pendiente'
@@ -42,6 +45,8 @@ def guarda_renta():
         guarda_carro = base_datos.connection.cursor()
         guarda_carro.execute('''INSERT INTO renta (id_usuario, id_cliente, id_auto, folio, fecha, descripcion, fecha_entrega, cobro, abono, resto, dias_renta, estatus, observaciones, penalizaciones)
                             VALUES(%s,%s, %s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',(iusuario, cliente, tipo, fol, fe, des, fent, costo, ab, resto, dias, est,obs, penal))
+        
+        guarda_carro.execute("Update autos set estado='2' where id=%s",(tipo))
         base_datos.connection.commit()
         guarda_carro.close()
         return redirect(url_for('rentados'))
@@ -57,7 +62,11 @@ def rentados():
     }
 
     lista = base_datos.connection.cursor()
-    lista.execute("Select * from renta where resto='Pendiente' ")
+    lista.execute('''Select autos.marca, autos.modelo, autos.year, renta.fecha, renta.descripcion, renta.cobro, renta.abono,renta.resto,
+                    renta.dias_renta, renta.folio, renta.id from renta JOIN 
+                    autos ON autos.id = renta.id_auto
+                  ''')
+    #lista.execute("Select * from renta where resto='Pendiente' ")
     muestra = lista.fetchall()
     return render_template('autos/rentados.html', ventana = mensajes, datos = muestra)
 
@@ -142,18 +151,27 @@ def guarda_usuario():
         user = request.form['usuario']
         password = '123'
         encriptado = generate_password_hash(password, method='scrypt')
-        print (encriptado)
-
+        
         guarda = base_datos.connection.cursor(MySQLdb.cursors.DictCursor)
         guarda.execute(''' INSERT INTO usuarios (usuario, clave, nombre, apellidos)
                        VALUES (%s, %s, %s, %s)''', (user, encriptado, nom, ap))
         base_datos.connection.commit()
         guarda.close()
-        return redirect (url_for('arranca'))
+        return redirect (url_for('usuarios_exito'))
     else:
         mensaje = 'Existe un error en los datos verifica'
         return render_template('usuarios/captura_usuarios.html', msj = mensaje)
 
+@app.route('/success')
+def usuarios_exito():
+    mensajes = {
+    'alerta': 'Rent | Car',
+    'usuario':  '',
+    'sistema':  'Sistema de renta de vehiculos',
+    'mensajes':'El usuario se guardo exitosamente'
+    }
+    
+    return render_template("usuarios/exito.html", ventana = mensajes)
 
 @app.route('/login')
 def login_usuarios():
