@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+</head>
+<body>
+    <p class="parrafo_color">
+        Vamos a pintar(azul claro) este parrafo al cargar la pagina con el atributo class
+	    el codigo se encuentra en el mismo archivo.
+    </p>
+
+    <p id="parrafo_size">
+        Cambiando texto de tamaño
+        </p>
+
+        <div class="div_borde">
+            Vamos a agregar un borde a este div
+        </div>
+    
+    <span id="agranda" onmouseover="Agranda()" onmouseout="Achica()">Texto que se agranda</span>
+<form action="" name="mi_formulario">
+
+    <p><label for="">Cobro:</label><input type="text" name="cobro">
+    </p>
+    <p><label for="">Abono:</label><input type="text" name="abono"></p>
+<p class="total"></p>
+<button type="button" class="cuentas" onclick="cobros()">Hacer Calculo</button>
+</form>
+</body>
+</html>
+<script>
+    let p = document.querySelector(".parrafo_color");
+    p.style.backgroundColor="orange";
+    p.style.color = 'white';
+
+    let p2 = document.querySelector(".parrafo_size");
+    p2.style.fontSize='30px';
+    p2.style.color = 'orange';
+</script>
+<script src="archivos/div.js"></script>
