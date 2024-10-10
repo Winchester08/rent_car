@@ -23,18 +23,36 @@ function cobros(){
     
     //console.log(typeof(cobro)+ typeof(abono));
     
-    if (cobro !== typeof(number) && abono !== typeof(number) ){
-        alert("Datos no validos");
+//2 formas de validar si es un tipo de dato numero
+// con la funcion is NaN
+    if(isNaN(cobro) && isNaN(abono)){
+        alert("Error en los tipos de datos");
     }
-
     else {
-    let total = cobro - abono;
-    let ctotal = document.querySelector(".total");
-    ctotal.innerHTML=total;
-    }
+        alert("Datos validos, procesando...");
+        let total = cobro - abono;
+        let ctotal = document.querySelector(".total");
+        document.getElementById('total').value = total
+        ctotal.innerHTML=total;
     //let total = cobro + abono;
     //console.log(total);
-    
+}
+
+/********************
+ * 
+ * 
+ * lo que se hara con Jquery de forma mas rapida
+ == Usos basicos 
+ == Mostrar ocultar(hide, show, fadein, fadeout, SlideIn, SlideOut), cambiar colores y textos
+ == Validar formularios vacios
+ == Shake, Delay estos van con timing
+ == BlockUI usos y adornos
+ == Sweet Alert (ejemplos de uso)
+ == Alertify (ejemplos de uso)
+
+ * 
+ */
+
 
 }
 
